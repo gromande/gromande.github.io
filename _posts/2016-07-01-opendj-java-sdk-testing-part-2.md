@@ -14,7 +14,7 @@ tags:
 - opendj-sdk
 - unit-testing
 ---
-<p>A few weeks back I decided to write a blog post on how to efficiently test a Java application that uses the OpenDJ SDK to connect to an LDAP store (read post <a href="http://guillermo-roman.com/opendj-java-sdk-testing-part-1/">here</a>). Since the scope was so big I had to break it down into two smaller posts. In this second part I will walk you through a sample maven-based application written in Java that uses <a href="https://www.docker.com/">Docker</a> for integration testing.</p>
+<p>A few weeks back I decided to write a blog post on how to efficiently test a Java application that uses the OpenDJ SDK to connect to an LDAP store (read post <a href="{{ site.baseurl }}/opendj-java-sdk-testing-part-1/">here</a>). Since the scope was so big I had to break it down into two smaller posts. In this second part I will walk you through a sample maven-based application written in Java that uses <a href="https://www.docker.com/">Docker</a> for integration testing.</p>
 
 <!--more-->
 
@@ -76,10 +76,10 @@ public class MyIntegrationTestCase {
 &lt;/plugin&gt;</pre>
 <p>The sample application only has one unit test  (<em>PersonDAOUnitTestCase</em>) and one integration test (<em>PersonDAOIntegrationTestCase</em>). Both classes extend from a base class called <em>AbstractPersonDAOTestCase</em> that implements most of the logic. The only difference between these two classes is how they initialize the LDAP connection. While <em>PersonDAOUnitTestCase</em> uses an in-memory backend, <em>PersonDAOIntegrationTestCase</em> establishes a "real" connection to an external LDAP server (in this case it will connect to a Docker container).</p>
 <h1>Sample Unit Test</h1>
-<p><em>PersonDAOUnitTestCase</em> makes use of the Memory Backend provided by the OpenDJ SDK. In other words, it won't actually connect to an external LDAP server. In <a href="http://guillermo-roman.com/opendj-java-sdk-testing-part-1/">Part 1</a> I talked about this feature extensively.</p>
+<p><em>PersonDAOUnitTestCase</em> makes use of the Memory Backend provided by the OpenDJ SDK. In other words, it won't actually connect to an external LDAP server. In <a href="{{ site.baseurl }}/opendj-java-sdk-testing-part-1/">Part 1</a> I talked about this feature extensively.</p>
 <h1>Sample Integration Test</h1>
 <p>For integration testing the idea is to spin up a Docker container running OpenDJ, execute the integration tests, and stop the container when the tests are done. The question is, how can we integrate this process into the maven build lifecycle? Well, we could write our own custom plugin...Luckily somebody has done all the hard work for us. This <a href="https://github.com/wouterd/docker-maven-plugin">docker-maven-plugin</a> does exactly what we need, and it works great. Here is how it works.</p>
-<p>First we need to find a place to store the <em>Dokerfile</em> and all it's dependencies such as LDIF and schema files. I will use the same artifacts from one of my <a href="http://guillermo-roman.com/opendj-integration-testing-docker-image/">previous post</a>. You can find these files in the following location:</p>
+<p>First we need to find a place to store the <em>Dokerfile</em> and all it's dependencies such as LDIF and schema files. I will use the same artifacts from one of my <a href="{{ site.baseurl }}/opendj-integration-testing-docker-image/">previous post</a>. You can find these files in the following location:</p>
 <p><img class="alignnone wp-image-185" src="{{ site.baseurl }}/assets/images/dj_sample_eclipse_screen.png" alt="project screenshot" width="332" height="187" /></p>
 <p>Time to add the <em>docker-maven-plugin</em> to our <em>pom.xml</em>. The plugin will get invoked three times during the build process:</p>
 <ul>

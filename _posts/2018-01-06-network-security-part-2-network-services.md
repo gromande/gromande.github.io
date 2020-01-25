@@ -12,7 +12,7 @@ tags:
 - ntp
 - pfsense
 ---
-In [part 1](http://guillermo-roman.com/network-security-part-1-setting-up-your-environment/) of this series we created the environment that we will be using in future posts. At the core of the network architecture is our pfSense router. Before we can start exploring all the security features that pfSense provides we need to configure some basic network services for our LAN (management) and OPT1 (internal) networks.
+In [part 1]({{ site.baseurl }}/network-security-part-1-setting-up-your-environment/) of this series we created the environment that we will be using in future posts. At the core of the network architecture is our pfSense router. Before we can start exploring all the security features that pfSense provides we need to configure some basic network services for our LAN (management) and OPT1 (internal) networks.
 
 <!--more-->
 

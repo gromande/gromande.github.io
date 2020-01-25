@@ -19,7 +19,7 @@ Network firewalls are the first line of defense against external attackers, and 
 
 # Aliases
 
-Aliases allow you to group IPs, networks and ports together. This will help in keeping your firewall rules clean and easy to understand. The lab that we built on [Part 1](http://guillermo-roman.com/network-security-part-1-setting-up-your-environment/) of this series is pretty small but imagine the level of complexity involved in managing a firewall for a big enterprise environment.
+Aliases allow you to group IPs, networks and ports together. This will help in keeping your firewall rules clean and easy to understand. The lab that we built on [Part 1]({{ site.baseurl }}/network-security-part-1-setting-up-your-environment/) of this series is pretty small but imagine the level of complexity involved in managing a firewall for a big enterprise environment.
 
 pfSense comes with a set of pre-configured aliases:
 

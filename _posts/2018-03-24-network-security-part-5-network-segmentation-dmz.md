@@ -11,7 +11,7 @@ tags:
 - network segmentation
 - pfsense
 ---
-In [Part 4](https://guillermo-roman.com/network-security-part-4-host-firewalls/) of this series, I talked about the importance of host-based firewalls to protect against lateral movement between host co-located on the same network. Though that was a great improvement, there are still some critical design issues with our network architecture:
+In [Part 4]({{ site.baseurl }}/network-security-part-4-host-firewalls/) of this series, I talked about the importance of host-based firewalls to protect against lateral movement between host co-located on the same network. Though that was a great improvement, there are still some critical design issues with our network architecture:
 
 ![]({{ site.baseurl }}/assets/images/image001.png)
 
