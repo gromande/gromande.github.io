@@ -26,6 +26,9 @@ author:
 permalink: "/tomcat-ha-cluster-automation-using-ansible/"
 ---
 <p>For the last couple of weeks I've been playing with <a href="https://www.ansible.com/">Ansible</a>, a very powerful automation tool that lets you configure, and deploy applications to multiple remote servers with a single command.</p>
+
+<!--more-->
+
 <p>Sounds easy, right? The answer is yes...but only after you get ansible to a point where it does what you want it to do. In this post I will explain how to use ansible to install a cluster of Tomcat 7 containers balanced by an HAProxy. I want to make clear that the purpose of this post is not to explain how ansible works. You should first take a look at the <a href="http://docs.ansible.com/ansible/index.html">ansible documentation</a> to get familiar with the basic commands a configuration files we'll be using for this project.</p>
 <p>The following diagram illustrates the system that we are trying to build:</p>
 <p>&nbsp;</p>

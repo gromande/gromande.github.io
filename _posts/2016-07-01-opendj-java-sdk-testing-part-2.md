@@ -31,10 +31,12 @@ author:
 permalink: "/opendj-java-sdk-testing-part-2/"
 ---
 <p>A few weeks back I decided to write a blog post on how to efficiently test a Java application that uses the OpenDJ SDK to connect to an LDAP store (read post <a href="http://guillermo-roman.com/opendj-java-sdk-testing-part-1/">here</a>). Since the scope was so big I had to break it down into two smaller posts. In this second part I will walk you through a sample maven-based application written in Java that uses <a href="https://www.docker.com/">Docker</a> for integration testing.</p>
+
+<!--more-->
+
 <p>The following diagram illustrates the application build process:</p>
 <p><img class="alignnone size-large wp-image-180" src="{{ site.baseurl }}/assets/images/maven-sldc-1024x413.png" alt="app-sdlc" width="1024" height="413" /></p>
 <p>The sample app follows the standard <a href="https://maven.apache.org/guides/introduction/introduction-to-the-lifecycle.html">Maven Build Life Cycle</a> but it adds a couple of phases to it so that we can build, run and destroy a Docker container before the <em>Integration Test Phase</em>.</p>
-<p><!--more--></p>
 <h1>About the Sample App</h1>
 <p>You can download the sample application from my <a href="https://github.com/gromande/opendj-sample">Github repo</a>.</p>
 <p>The application uses the <a href="https://backstage.forgerock.com/#!/docs/opendj-ldap-sdk/2.6.11/sdk-release-notes">OpenDJ Java SDK</a> to retrieve User objects from a Directory Server and perform operations on them (create, update, and delete). The code is pretty straight forward so feel free to explore it if you want to understand how it works. However, in this post I am just going to focus on testing the <em>Person Data Access Object</em> (<em>PersonDAO.java</em>). The interface is self-explanatory:</p>

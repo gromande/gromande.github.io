@@ -31,6 +31,9 @@ permalink: "/unit-testing-using-groovy-junit-and-maven/"
 <p><!--more--></p>
 <p>Over the years, I've learned to ask myself the following question over and over again: what can I do to make this process more efficient? The answer in this case was simple:</p>
 <blockquote><p>Test earlier. Test better.</p></blockquote>
+
+<!--more-->
+
 <p>So I decided to introduce a new testing phase earlier in the process:</p>
 <p><img class="size-large wp-image-61 aligncenter" src="{{ site.baseurl }}/assets/images/groovy-maven-junit-2-1024x409.png" alt="groovy-maven-junit-2" width="1024" height="409" /></p>
 <p>I had to tackle some problems along the way so I decided to write a blog post about it.</p>

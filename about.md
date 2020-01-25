@@ -3,6 +3,7 @@ layout: page
 title: About Me
 permalink: /about/
 ---
+![image]({{ site.baseurl }}/assets/images/headshot.jpeg)
 
 I am an Information Security generalist, currently focused on designing and implementing Identity and Access Management programs for my clients. I have a passion for finding simple strategies and solutions that can solve complex problems using a combination of technical skills and business acumen.
 
