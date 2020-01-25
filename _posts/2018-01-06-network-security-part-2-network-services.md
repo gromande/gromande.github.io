@@ -2,11 +2,7 @@
 layout: post
 title: 'Network Security - Part 2: Network Services'
 date: 2018-01-06 22:33:08.000000000 -06:00
-type: post
-parent_id: '0'
-published: true
 password: ''
-status: publish
 categories:
 - InfoSec
 - Network Security
@@ -15,17 +11,6 @@ tags:
 - dns
 - ntp
 - pfsense
-meta:
-  _edit_last: '1'
-  _publicize_twitter_user: "@GuilleRoman"
-  _wpas_done_all: '1'
-author:
-  login: gromanwp
-  email: guillermo.roman.dearagon@gmail.com
-  display_name: Guillermo Roman
-  first_name: Guillermo
-  last_name: Roman
-permalink: "/network-security-part-2-network-services/"
 ---
 In [part 1](http://guillermo-roman.com/network-security-part-1-setting-up-your-environment/) of this series we created the environment that we will be using in future posts. At the core of the network architecture is our pfSense router. Before we can start exploring all the security features that pfSense provides we need to configure some basic network services for our LAN (management) and OPT1 (internal) networks.
 

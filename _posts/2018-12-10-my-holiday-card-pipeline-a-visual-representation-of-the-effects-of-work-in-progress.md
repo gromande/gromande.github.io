@@ -3,28 +3,12 @@ layout: post
 title: 'My Holiday Card Pipeline: A Visual Representation of the Effects of Work In
   Progress'
 date: 2018-12-10 00:14:21.000000000 -06:00
-type: post
-parent_id: '0'
-published: true
 password: ''
-status: publish
 categories:
 - DevOps
 tags:
 - devops
 - lean
-meta:
-  _edit_last: '1'
-  _wpas_skip_14442829: '1'
-  _publicize_twitter_user: "@GuilleRoman"
-  _wpas_done_all: '1'
-author:
-  login: gromanwp
-  email: guillermo.roman.dearagon@gmail.com
-  display_name: Guillermo Roman
-  first_name: Guillermo
-  last_name: Roman
-permalink: "/my-holiday-card-pipeline-a-visual-representation-of-the-effects-of-work-in-progress/"
 ---
 It's holiday time. Some people use this time of the year to reflect on the past. Others, prefer to look to the future and set goals for the new year. For me, well...for me it means sending holiday cards to friends and family.
 

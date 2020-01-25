@@ -2,11 +2,7 @@
 layout: post
 title: 'Network Security - Part 4: Host Firewalls'
 date: 2018-02-19 02:02:15.000000000 -06:00
-type: post
-parent_id: '0'
-published: true
 password: ''
-status: publish
 categories:
 - InfoSec
 - Network Security
@@ -14,17 +10,6 @@ tags:
 - firewall
 - iptables
 - linux
-meta:
-  _edit_last: '1'
-  _publicize_twitter_user: "@GuilleRoman"
-  _wpas_done_all: '1'
-author:
-  login: gromanwp
-  email: guillermo.roman.dearagon@gmail.com
-  display_name: Guillermo Roman
-  first_name: Guillermo
-  last_name: Roman
-permalink: "/network-security-part-4-host-firewalls/"
 ---
 So you spent thousands of dollars on a [next-gen firewall](https://en.wikipedia.org/wiki/Next-Generation_Firewall).That means you are secure, right? Even though it is obvious that the answer to this question is no, many people believed otherwise not that long ago. Just because you spend money on security doesn't mean that you'll be secure. Network firewalls provide one layer of protection for your environment but they can be bypassed by experienced attackers, specially if the firewall is not configured properly. In fact, it's not a matter of "if", it's a matter of "when". What will you do when an attacker bypasses your firewall and compromises one of your endpoints?
 

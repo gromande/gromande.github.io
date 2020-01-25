@@ -2,29 +2,11 @@
 layout: post
 title: OpenDJ Docker Image for Integration Testing
 date: 2016-06-08 22:40:48.000000000 -05:00
-type: post
-parent_id: '0'
-published: true
 password: ''
-status: publish
 categories: []
 tags: []
-meta:
-  _edit_last: '1'
-  _publicize_twitter_user: "@GuilleRoman"
-  _wpas_done_all: '1'
-  _wpas_skip_14442829: '1'
-  _wpas_skip_14442837: '1'
-  _jetpack_dont_email_post_to_subs: '1'
-author:
-  login: gromanwp
-  email: guillermo.roman.dearagon@gmail.com
-  display_name: Guillermo Roman
-  first_name: Guillermo
-  last_name: Roman
-permalink: "/opendj-integration-testing-docker-image/"
 ---
-As I mentioned in my [previous post](http://guillermo-roman.com/opendj-java-sdk-testing-part-1/)&nbsp;I've been playing with Docker lately trying to build an OpenDJ image that I could use for integration testing. Before digging deeper into my testing strategy I decided to publish this short post to explain how such image can be created using a simple Dockerfile.  
+As I mentioned in my [previous post]({{ site.baseurl }}/opendj-java-sdk-testing-part-1/)&nbsp;I've been playing with Docker lately trying to build an OpenDJ image that I could use for integration testing. Before digging deeper into my testing strategy I decided to publish this short post to explain how such image can be created using a simple Dockerfile.  
 <!--more-->
 
 You can go ahead and [download](https://github.com/gromande/opendj-docker-image) the project from Github if you want to play with it. This is what the Dockerfile looks like:

@@ -2,11 +2,7 @@
 layout: post
 title: 'Network Security - Part 7: Remote Access & VPNs'
 date: 2018-07-03 20:00:39.000000000 -05:00
-type: post
-parent_id: '0'
-published: true
 password: ''
-status: publish
 categories:
 - InfoSec
 - Network Security
@@ -14,17 +10,6 @@ tags:
 - infosec
 - pfsense
 - vpn
-meta:
-  _edit_last: '1'
-  _publicize_twitter_user: "@GuilleRoman"
-  _wpas_done_all: '1'
-author:
-  login: gromanwp
-  email: guillermo.roman.dearagon@gmail.com
-  display_name: Guillermo Roman
-  first_name: Guillermo
-  last_name: Roman
-permalink: "/network-security-part-7-remote-access-vpns/"
 ---
 In today's world, It's very common for companies to have multiple offices around the world and to allow employees to work remotely. This desired for mobility must&nbsp;be taken into consideration when designing your network to ensure people can access company resources from anywhere, at anytime, and with a high degree of security. The most common remote access technology used today are Virtual Private Networks (VPNs).
 

@@ -2,11 +2,7 @@
 layout: post
 title: OpenAM12 Custom Authentication Chains
 date: 2016-04-21 18:57:24.000000000 -05:00
-type: post
-parent_id: '0'
-published: true
 password: ''
-status: publish
 categories:
 - Forgerock
 - OpenAM
@@ -14,17 +10,6 @@ tags:
 - authentication
 - openam
 - sso
-meta:
-  _edit_last: '1'
-  _wpas_done_all: '1'
-  _jetpack_dont_email_post_to_subs: '1'
-author:
-  login: gromanwp
-  email: guillermo.roman.dearagon@gmail.com
-  display_name: Guillermo Roman
-  first_name: Guillermo
-  last_name: Roman
-permalink: "/openam12-custom-authentication-chains/"
 ---
 One of the cool features of _[JAAS](https://en.wikipedia.org/wiki/Java_Authentication_and_Authorization_Service) (Java Authentication and Authorization Service)_, which is at the core of OpenAM's authentication engine, is that it's modular. Not only you can&nbsp;create your own authentication modules but you can also chain multiple modules together in a cascade fashion. This comes in&nbsp;handy when you want to implement some sort of strong authentication, such as&nbsp;2-factor authentication flow, where you need&nbsp;to force the user to go through multiple authentication steps.
 

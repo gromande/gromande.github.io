@@ -2,11 +2,7 @@
 layout: post
 title: Unit Testing Using Groovy, JUnit, and Maven
 date: 2016-03-07 17:27:39.000000000 -06:00
-type: post
-parent_id: '0'
-published: true
 password: ''
-status: publish
 categories:
 - Programming
 - Testing
@@ -14,16 +10,6 @@ tags:
 - groovy
 - junit
 - maven
-meta:
-  _edit_last: '1'
-  _jetpack_dont_email_post_to_subs: '1'
-author:
-  login: gromanwp
-  email: guillermo.roman.dearagon@gmail.com
-  display_name: Guillermo Roman
-  first_name: Guillermo
-  last_name: Roman
-permalink: "/unit-testing-using-groovy-junit-and-maven/"
 ---
 <p>One of my clients had to use Groovy scripts to synchronize thousands of user identities between multiple data sources. When I started working on the project the development process looked similar to this:</p>
 <p><img class=" wp-image-60 aligncenter" src="{{ site.baseurl }}/assets/images/groovy-maven-junit-1-1024x458.png" alt="groovy-maven-junit-1" width="520" height="233" /></p>

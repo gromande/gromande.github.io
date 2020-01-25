@@ -2,11 +2,7 @@
 layout: post
 title: 'Network Security - Part 5: Network Segmentation (DMZ)'
 date: 2018-03-24 22:51:52.000000000 -05:00
-type: post
-parent_id: '0'
-published: true
 password: ''
-status: publish
 categories:
 - Network Security
 tags:
@@ -14,17 +10,6 @@ tags:
 - infosec
 - network segmentation
 - pfsense
-meta:
-  _edit_last: '1'
-  _publicize_twitter_user: "@GuilleRoman"
-  _wpas_done_all: '1'
-author:
-  login: gromanwp
-  email: guillermo.roman.dearagon@gmail.com
-  display_name: Guillermo Roman
-  first_name: Guillermo
-  last_name: Roman
-permalink: "/network-security-part-5-network-segmentation-dmz/"
 ---
 In [Part 4](https://guillermo-roman.com/network-security-part-4-host-firewalls/) of this series, I talked about the importance of host-based firewalls to protect against lateral movement between host co-located on the same network. Though that was a great improvement, there are still some critical design issues with our network architecture:
 

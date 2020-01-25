@@ -2,35 +2,13 @@
 layout: post
 title: Building an Ethical Hacking Lab
 date: 2017-09-05 21:55:23.000000000 -05:00
-type: post
-parent_id: '0'
-published: true
 password: ''
-status: publish
 categories:
 - InfoSec
 tags:
 - infosec
 - kalilinux
 - pentest
-meta:
-  _edit_last: '1'
-  _oembed_76ceb39301905aa634d01d385c0352f5: "{{unknown}}"
-  _oembed_a49f355eb2b656cc1d29f2b57a231437: "{{unknown}}"
-  _oembed_34fa73533fa6581500ccebe2c2d43ee6: "{{unknown}}"
-  _oembed_e787e3719214ef6bbb2b5267e60b72f2: "{{unknown}}"
-  _publicize_twitter_user: "@GuilleRoman"
-  _oembed_3a5b1a3851806c98d6eb7b632873e5f6: "{{unknown}}"
-  _oembed_52dd5e8ff76d13861c1809aef4c770c1: "{{unknown}}"
-  _wpas_mess: Building an Ethical Hacking Lab
-  _wpas_done_all: '1'
-author:
-  login: gromanwp
-  email: guillermo.roman.dearagon@gmail.com
-  display_name: Guillermo Roman
-  first_name: Guillermo
-  last_name: Roman
-permalink: "/building-an-ethical-hacking-lab/"
 ---
 If you want to have a successful career in Information Security, building your own personal lab is essential. Not only it is likely to come up during technical interview questions but it will also be your personal geek playground. The lab is where you learn, discover, and have fun.
 

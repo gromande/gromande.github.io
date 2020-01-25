@@ -2,11 +2,7 @@
 layout: post
 title: 'Network Security - Part 1: Setting Up Your Environment'
 date: 2017-12-16 22:50:19.000000000 -06:00
-type: post
-parent_id: '0'
-published: true
 password: ''
-status: publish
 categories:
 - InfoSec
 - Network Security
@@ -14,18 +10,6 @@ tags:
 - pfsense
 - ubuntu
 - virtualbox
-meta:
-  _edit_last: '1'
-  _publicize_twitter_user: "@GuilleRoman"
-  _oembed_26e7131f86c1664c79f1dc834e460dbc: "{{unknown}}"
-  _wpas_done_all: '1'
-author:
-  login: gromanwp
-  email: guillermo.roman.dearagon@gmail.com
-  display_name: Guillermo Roman
-  first_name: Guillermo
-  last_name: Roman
-permalink: "/network-security-part-1-setting-up-your-environment/"
 ---
 A few months ago, I embarked on a journey to learn more about the fundamentals of network security. This is the first of a series of technical blog posts where I will try to cover some of the tools and techniques I learned along the way: network and host-based firewalls, web proxies, or intrusion detection systems among others.
 

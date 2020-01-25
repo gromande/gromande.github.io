@@ -2,11 +2,7 @@
 layout: post
 title: 'Network Security - Part 3: Network Firewalls'
 date: 2018-02-01 23:27:18.000000000 -06:00
-type: post
-parent_id: '0'
-published: true
 password: ''
-status: publish
 categories:
 - InfoSec
 - Network Security
@@ -14,18 +10,6 @@ tags:
 - firewalls
 - nat
 - pfsense
-meta:
-  _edit_last: '1'
-  _publicize_twitter_user: "@GuilleRoman"
-  _oembed_40cf48a8331c926c9ef822047ac6b27e: "{{unknown}}"
-  _wpas_done_all: '1'
-author:
-  login: gromanwp
-  email: guillermo.roman.dearagon@gmail.com
-  display_name: Guillermo Roman
-  first_name: Guillermo
-  last_name: Roman
-permalink: "/network-security-part-3-network-firewalls/"
 ---
 A lot of people in the security industry have been talking about the&nbsp;[de-perimeterisation](https://en.wikipedia.org/wiki/De-perimeterisation)&nbsp;of the network for a few years now. Even though attention has shifted away from prevention technologies and companies are investing more time, money, and effort into detection and response, the truth is that protecting the perimeter from external attacks is still relevant today. You might not be able to block every malicious packet from entering your network but if you can slow the attacker down you'll have more time to detect them and respond to the attack before they get access to a critical system.
 

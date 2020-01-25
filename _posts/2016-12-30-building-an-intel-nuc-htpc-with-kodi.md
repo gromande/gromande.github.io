@@ -2,29 +2,13 @@
 layout: post
 title: Building an Intel NUC HTPC with Kodi
 date: 2016-12-30 20:24:58.000000000 -06:00
-type: post
-parent_id: '0'
-published: true
 password: ''
-status: publish
 categories:
 - HTPC
 tags:
 - intelnuc
 - kodi
 - openelec
-meta:
-  _edit_last: '1'
-  _publicize_twitter_user: "@GuilleRoman"
-  _wpas_done_all: '1'
-  _jetpack_dont_email_post_to_subs: '1'
-author:
-  login: gromanwp
-  email: guillermo.roman.dearagon@gmail.com
-  display_name: Guillermo Roman
-  first_name: Guillermo
-  last_name: Roman
-permalink: "/building-an-intel-nuc-htpc-with-kodi/"
 ---
 Being the movie&nbsp;junkie that I am, I've wanted to build my own Home Theater PC (HTPC) for quite some time. This past Black Friday I saw a great Intel NUC combo deal on [Newegg](http://www.newegg.com/)&nbsp; so I decided to give it a try. In this post I will show you how to assemble an Intel NUC5CPYH, how to install OpenELEC, and how to configure it so that you can get the best out of your HTPC.
 

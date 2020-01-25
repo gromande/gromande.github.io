@@ -2,11 +2,7 @@
 layout: post
 title: 'OpenDJ Java SDK Testing: Part 1'
 date: 2016-05-13 15:50:22.000000000 -05:00
-type: post
-parent_id: '0'
-published: true
 password: ''
-status: publish
 categories:
 - Forgerock
 - OpenDJ
@@ -14,17 +10,6 @@ tags:
 - java
 - opendj-sdk
 - unit-testing
-meta:
-  _edit_last: '1'
-  _wpas_done_all: '1'
-  _jetpack_dont_email_post_to_subs: '1'
-author:
-  login: gromanwp
-  email: guillermo.roman.dearagon@gmail.com
-  display_name: Guillermo Roman
-  first_name: Guillermo
-  last_name: Roman
-permalink: "/opendj-java-sdk-testing-part-1/"
 ---
 If you have ever used the [OpenDJ Java SDK](https://backstage.forgerock.com/#!/docs/opendj-ldap-sdk/2.6.11/sdk-release-notes) to connect to and OpenDJ Directory Server from your application chances are that you've asked yourself&nbsp;the following question: how the hell do I test this?
 

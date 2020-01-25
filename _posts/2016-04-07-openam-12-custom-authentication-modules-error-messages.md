@@ -2,11 +2,7 @@
 layout: post
 title: 'OpenAM 12 Custom Authentication: Error Messages'
 date: 2016-04-07 16:18:36.000000000 -05:00
-type: post
-parent_id: '0'
-published: true
 password: ''
-status: publish
 categories:
 - Forgerock
 - OpenAM
@@ -14,17 +10,6 @@ categories:
 tags:
 - authentication
 - openam
-meta:
-  _edit_last: '1'
-  _oembed_62954c67138b80ad6045140904369be5: "{{unknown}}"
-  _jetpack_dont_email_post_to_subs: '1'
-author:
-  login: gromanwp
-  email: guillermo.roman.dearagon@gmail.com
-  display_name: Guillermo Roman
-  first_name: Guillermo
-  last_name: Roman
-permalink: "/openam-12-custom-authentication-modules-error-messages/"
 ---
 This is the first of a series of posts in which I plan to cover some tips and pitfalls involving the creation of custom authentication modules in&nbsp;[OpenAM 12](https://backstage.forgerock.com/#!/docs/openam). One of the most common people ask me&nbsp;is how do I customize the error messages returned by the OpenAM's authentication engine?. Today I will explain step-by-step how to add custom error messages to your authentication modules.
 

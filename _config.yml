@@ -23,6 +23,7 @@ github_username:  gromande
 linkedin_username: gromande
 
 # Build settings
+permalink: /:title/
 markdown: kramdown
 theme: minima
 show_excerpts: true

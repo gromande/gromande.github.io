@@ -2,11 +2,7 @@
 layout: post
 title: 'Follow up: Tomcat HA Cluster Automation using Ansible and Vagrant'
 date: 2016-03-18 22:16:16.000000000 -05:00
-type: post
-parent_id: '0'
-published: true
 password: ''
-status: publish
 categories:
 - Automation
 tags:
@@ -14,16 +10,6 @@ tags:
 - haproxy
 - tomcat
 - vagrant
-meta:
-  _edit_last: '1'
-  _jetpack_dont_email_post_to_subs: '1'
-author:
-  login: gromanwp
-  email: guillermo.roman.dearagon@gmail.com
-  display_name: Guillermo Roman
-  first_name: Guillermo
-  last_name: Roman
-permalink: "/follow-up-tomcat-ha-cluster-automation-using-ansible-and-vagrant/"
 ---
 In one of [my previous posts](http://guillermo-roman.com/tomcat-ha-cluster-automation-using-ansible/) I presented a solution&nbsp;to automate a&nbsp;Tomcat cluster installation using Ansible.&nbsp;One of the assumptions I made at the time was that the actual machines (physical or virtual) were already running and that Ansible could access them via SSH. Well, that might be true for a real production-like environment but what if you wanted to test this out on your local machine? Wouldn't it be cool to spin up&nbsp;some virtual machines first and&nbsp;then use Ansible to provision them with the click&nbsp;of a button? [Vagrant](https://www.vagrantup.com/) to the rescue!
 

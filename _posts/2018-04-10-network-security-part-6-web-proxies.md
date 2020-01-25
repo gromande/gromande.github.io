@@ -2,11 +2,7 @@
 layout: post
 title: 'Network Security - Part 6: Web Proxies'
 date: 2018-04-10 00:59:11.000000000 -05:00
-type: post
-parent_id: '0'
-published: true
 password: ''
-status: publish
 categories:
 - InfoSec
 - Network Security
@@ -15,17 +11,6 @@ tags:
 - proxies
 - squid
 - url-filtering
-meta:
-  _edit_last: '1'
-  _publicize_twitter_user: "@GuilleRoman"
-  _wpas_done_all: '1'
-author:
-  login: gromanwp
-  email: guillermo.roman.dearagon@gmail.com
-  display_name: Guillermo Roman
-  first_name: Guillermo
-  last_name: Roman
-permalink: "/network-security-part-6-web-proxies/"
 ---
 Let's take a step back and look at the environment we have created so far. We have both network and host-based firewalls to control traffic flowing between different networks, especially traffic coming in from untrusted zones. We even added a DMZ to isolate publicly exposed services (such as web servers) from the rest of the environment. But what if one of our users goes to a malicious website and downloads malware that then spreads throughout your internal network? What if your CFO gets tricked into clicking on a phishing link and gives away his or her credentials to an attacker?
 

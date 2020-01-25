@@ -2,28 +2,12 @@
 layout: post
 title: Tomcat HA Cluster Automation using Ansible
 date: 2016-02-25 15:20:29.000000000 -06:00
-type: post
-parent_id: '0'
-published: true
-password: ''
-status: publish
 categories:
 - Automation
 tags:
 - ansible
 - haproxy
 - tomcat
-meta:
-  _edit_last: '1'
-  _oembed_7bbea3c7c67f671e5359b873fd59e3f3: "{{unknown}}"
-  _jetpack_dont_email_post_to_subs: '1'
-author:
-  login: gromanwp
-  email: guillermo.roman.dearagon@gmail.com
-  display_name: Guillermo Roman
-  first_name: Guillermo
-  last_name: Roman
-permalink: "/tomcat-ha-cluster-automation-using-ansible/"
 ---
 <p>For the last couple of weeks I've been playing with <a href="https://www.ansible.com/">Ansible</a>, a very powerful automation tool that lets you configure, and deploy applications to multiple remote servers with a single command.</p>
 

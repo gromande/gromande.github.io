@@ -2,11 +2,7 @@
 layout: post
 title: 'OpenDJ Java SDK Testing: Part 2'
 date: 2016-07-01 21:34:02.000000000 -05:00
-type: post
-parent_id: '0'
-published: true
 password: ''
-status: publish
 categories:
 - Forgerock
 - Java
@@ -17,18 +13,6 @@ tags:
 - maven
 - opendj-sdk
 - unit-testing
-meta:
-  _edit_last: '1'
-  _publicize_twitter_user: "@GuilleRoman"
-  _wpas_done_all: '1'
-  _jetpack_dont_email_post_to_subs: '1'
-author:
-  login: gromanwp
-  email: guillermo.roman.dearagon@gmail.com
-  display_name: Guillermo Roman
-  first_name: Guillermo
-  last_name: Roman
-permalink: "/opendj-java-sdk-testing-part-2/"
 ---
 <p>A few weeks back I decided to write a blog post on how to efficiently test a Java application that uses the OpenDJ SDK to connect to an LDAP store (read post <a href="http://guillermo-roman.com/opendj-java-sdk-testing-part-1/">here</a>). Since the scope was so big I had to break it down into two smaller posts. In this second part I will walk you through a sample maven-based application written in Java that uses <a href="https://www.docker.com/">Docker</a> for integration testing.</p>
 
