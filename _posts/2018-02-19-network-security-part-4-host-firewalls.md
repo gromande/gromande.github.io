@@ -119,9 +119,25 @@ By default, IPTables are flushed (removed) with every server restart. There are 
 
 Log into nslWebServer and create a file containing all our IPTables commands:
 
-```
-#!/bin/sh IPT=/sbin/iptables # flush tables $IPT -F # policies $IPT -P OUTPUT ACCEPT $IPT -P INPUT DROP $IPT -P FORWARD DROP # allowed inputs $IPT -A INPUT -i lo -j ACCEPT $IPT -A INPUT -p tcp --dport 22 -s 172.16.1.2 -j ACCEPT $IPT -A INPUT -p tcp --dport 80 -j ACCEPT #allow responses $IPT -A INPUT -m state --state ESTABLISHED,RELATED -j ACCEPT
-```
+{% highlight shell %}
+#!/bin/sh
+IPT=/sbin/iptables
+
+# flush tables 
+$IPT -F
+# policies
+$IPT -P OUTPUT ACCEPT
+$IPT -P INPUT DROP
+$IPT -P FORWARD DROP
+
+# allowed inputs
+$IPT -A INPUT -i lo -j ACCEPT
+$IPT -A INPUT -p tcp --dport 22 -s 172.16.1.2 -j ACCEPT
+$IPT -A INPUT -p tcp --dport 80 -j ACCEPT
+
+#allow responses
+$IPT -A INPUT -m state --state ESTABLISHED,RELATED -j ACCEPT
+{% endhighlight %}
 
 Run the following command to open the crontab editor:
 
@@ -152,4 +168,3 @@ Restart the server and verify that the IPTables rules didn't get removed.
 IPTables is a very powerful tool and there is much more you can do with it. Go ahead and create your own rules!
 
 Finally, I would like to mention that modern Windows Operating Systems come with [Windows Firewall](https://en.wikipedia.org/wiki/Windows_Firewall) enabled by default. Windows Firewall is very easy to configure and it can greatly improve your defenses and protect against lateral movement as well.
-

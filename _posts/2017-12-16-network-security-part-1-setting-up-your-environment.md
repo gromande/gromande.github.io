@@ -220,9 +220,18 @@ You should now be able to SSH into the pfSense VM (_172.16.1.1_) using your pref
 
 As before, feel free to use the following script for creating the VM:
 
-```
-$StorageFolder="D:\VirtualBox Storage" $ISOFile="D:\ISO\ubuntu-16.04.3-server-amd64.iso" VBoxManage.exe createvm --name nslWebServer --ostype "Ubuntu\_64" --register VBoxManage.exe modifyvm nslWebServer --memory 1024 --cpus 2 VBoxManage.exe createhd --filename "$StorageFolder\nslWebServer\nslWebServer.vdi" --size 20000 --format VDI VBoxManage.exe storagectl nslWebServer --name "SATA Controller" --add sata VBoxManage.exe storageattach nslWebServer --storagectl "SATA Controller" --port 0 --device 0 --type hdd --medium "$StorageFolder\nslWebServer\nslWebServer.vdi" VBoxManage.exe storagectl nslWebServer --name "IDE Controller" --add ide VBoxManage.exe storageattach nslWebServer --storagectl "IDE Controller" --port 1 --device 0 --type dvddrive --medium "$ISOFile" VBoxManage.exe modifyvm nslWebServer --usb off --mouse ps2 --audio none VBoxManage.exe modifyvm nslWebServer --nic1 intnet --intnet1 nslInternal
-```
+{% highlight powershell %}
+$StorageFolder="D:\VirtualBox Storage"
+$ISOFile="D:\ISO\ubuntu-16.04.3-server-amd64.iso"
+
+VBoxManage.exe createvm --name nslWebServer --ostype "Ubuntu_64" --register VBoxManage.exe modifyvm nslWebServer --memory 1024 --cpus 2
+VBoxManage.exe createhd --filename "$StorageFolder\nslWebServer\nslWebServer.vdi" --size 20000 --format VDI
+VBoxManage.exe storagectl nslWebServer --name "SATA Controller" --add sata
+VBoxManage.exe storageattach nslWebServer --storagectl "SATA Controller" --port 0 --device 0 --type hdd --medium "$StorageFolder\nslWebServer\nslWebServer.vdi"
+VBoxManage.exe storagectl nslWebServer --name "IDE Controller" --add ide VBoxManage.exe storageattach nslWebServer --storagectl "IDE Controller" --port 1 --device 0 --type dvddrive --medium "$ISOFile"
+VBoxManage.exe modifyvm nslWebServer --usb off --mouse ps2 --audio none
+VBoxManage.exe modifyvm nslWebServer --nic1 intnet --intnet1 nslInternal
+{% endhighlight %}
 
 We want our servers to use a static IP address. While you can configure each host manually to use a static IP, we are going to use&nbsp;[DHCP mappings](https://doc.pfsense.org/index.php/DHCP_Server#Static_IP_Mappings)&nbsp;and let the router assign the IPs for us.
 
@@ -288,9 +297,22 @@ Our monitoring server will also be running Ubuntu Server, so the installation pr
 
 Start by running the following script:
 
-```
-#Create VM $StorageFolder="D:\VirtualBox Storage" $ISOFile="D:\ISO\ubuntu-16.04.3-server-amd64.iso" $HostOnlyNetwork="VirtualBox Host-Only Ethernet Adapter" VBoxManage.exe createvm --name nslMonServer --ostype "Ubuntu\_64" --register VBoxManage.exe modifyvm nslMonServer --memory 1024 --cpus 2 VBoxManage.exe createhd --filename "$StorageFolder\nslMonServer\nslMonServer.vdi" --size 20000 --format VDI VBoxManage.exe storagectl nslMonServer --name "SATA Controller" --add sata VBoxManage.exe storageattach nslMonServer --storagectl "SATA Controller" --port 0 --device 0 --type hdd --medium "$StorageFolder\nslMonServer\nslMonServer.vdi" VBoxManage.exe storagectl nslMonServer --name "IDE Controller" --add ide VBoxManage.exe storageattach nslMonServer --storagectl "IDE Controller" --port 1 --device 0 --type dvddrive --medium "$ISOFile" VBoxManage.exe modifyvm nslMonServer --usb off --mouse ps2 --audio none VBoxManage.exe modifyvm nslpfSense --nic1 hostonly --hostonlyadapter1 "$HostOnlyNetwork" VBoxManage.exe modifyvm nslMonServer --nic2 intnet --intnet2 nslInternal
-```
+{% highlight powershell %}
+#Create VM
+$StorageFolder="D:\VirtualBox Storage"
+$ISOFile="D:\ISO\ubuntu-16.04.3-server-amd64.iso"
+$HostOnlyNetwork="VirtualBox Host-Only Ethernet Adapter"
+
+VBoxManage.exe createvm --name nslMonServer --ostype "Ubuntu_64" --register
+VBoxManage.exe modifyvm nslMonServer --memory 1024 --cpus 2 VBoxManage.exe createhd --filename "$StorageFolder\nslMonServer\nslMonServer.vdi" --size 20000 --format VDI
+VBoxManage.exe storagectl nslMonServer --name "SATA Controller" --add sata
+VBoxManage.exe storageattach nslMonServer --storagectl "SATA Controller" --port 0 --device 0 --type hdd --medium "$StorageFolder\nslMonServer\nslMonServer.vdi"
+VBoxManage.exe storagectl nslMonServer --name "IDE Controller" --add ide
+VBoxManage.exe storageattach nslMonServer --storagectl "IDE Controller" --port 1 --device 0 --type dvddrive --medium "$ISOFile"
+VBoxManage.exe modifyvm nslMonServer --usb off --mouse ps2 --audio none
+VBoxManage.exe modifyvm nslpfSense --nic1 hostonly --hostonlyadapter1 "$HostOnlyNetwork"
+VBoxManage.exe modifyvm nslMonServer --nic2 intnet --intnet2 nslInternal
+{% endhighlight %}
 
 One important difference is that the monitoring server has two NICs instead of just one. The first NIC is attached to the management network (_172.16.1.3_) while the second NIC is connected to the internal network (_172.16.2.3_).
 
@@ -326,9 +348,22 @@ At this point you should be able to SSH into the server through the management n
 
 Creating the Client VM is not that much different.
 
-```
-#Create VM $StorageFolder="D:\VirtualBox Storage" $ISOFile="D:\ISO\ubuntu-16.04.3-desktop-amd64.iso" VBoxManage.exe createvm --name nslClient --ostype "Ubuntu\_64" --register VBoxManage.exe modifyvm nslClient --memory 1024 --cpus 2 VBoxManage.exe createhd --filename "$StorageFolder\nslClient\nslClient.vdi" --size 20000 --format VDI VBoxManage.exe storagectl nslClient --name "SATA Controller" --add sata VBoxManage.exe storageattach nslClient --storagectl "SATA Controller" --port 0 --device 0 --type hdd --medium "$StorageFolder\nslClient\nslClient.vdi" VBoxManage.exe storagectl nslClient --name "IDE Controller" --add ide VBoxManage.exe storageattach nslClient --storagectl "IDE Controller" --port 1 --device 0 --type dvddrive --medium "$ISOFile" VBoxManage.exe modifyvm nslClient --usb off --mouse ps2 --audio none VBoxManage.exe modifyvm nslClient --nic1 intnet --intnet1 nslInternal VBoxManage.exe modifyvm nslClient --nic2 natnetwork --nat-network2 nslInternet
-```
+{% highlight powershell %}
+#Create VM
+$StorageFolder="D:\VirtualBox Storage"
+$ISOFile="D:\ISO\ubuntu-16.04.3-desktop-amd64.iso"
+
+VBoxManage.exe createvm --name nslClient --ostype "Ubuntu_64" --register
+VBoxManage.exe modifyvm nslClient --memory 1024 --cpus 2
+VBoxManage.exe createhd --filename "$StorageFolder\nslClient\nslClient.vdi" --size 20000 --format VDI
+VBoxManage.exe storagectl nslClient --name "SATA Controller" --add sata
+VBoxManage.exe storageattach nslClient --storagectl "SATA Controller" --port 0 --device 0 --type hdd --medium "$StorageFolder\nslClient\nslClient.vdi"
+VBoxManage.exe storagectl nslClient --name "IDE Controller" --add ide
+VBoxManage.exe storageattach nslClient --storagectl "IDE Controller" --port 1 --device 0 --type dvddrive --medium "$ISOFile"
+VBoxManage.exe modifyvm nslClient --usb off --mouse ps2 --audio none
+VBoxManage.exe modifyvm nslClient --nic1 intnet --intnet1 nslInternal
+VBoxManage.exe modifyvm nslClient --nic2 natnetwork --nat-network2 nslInternet
+{% endhighlight %}
 
 Start the&nbsp;VM and follow the Ubuntu Desktop installation instructions.
 
@@ -377,4 +412,3 @@ You've made it! You now have a fully fledged virtual environment running. In the
 Stay tuned!
 
 &nbsp;
-
