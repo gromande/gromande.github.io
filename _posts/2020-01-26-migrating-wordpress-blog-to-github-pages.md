@@ -1,15 +1,15 @@
 ---
 layout: post
-title:  "Migrating My Blog From Wordpress to GitHub Pages"
+title:  "Migrating from Wordpress to GitHub Pages"
 date:   2020-01-26
 tags: wordpress github
 ---
-At the begining of the new year, I decided to migrate my blog from Workdpress to [Github Pages](https://pages.github.com/). Even though the process was pretty simple, thanks to a number of different tools built by the community, there are a couple of things to keep in mind so I decided to create this step-by-step guide.
+At the beginning of the new year, I decided to migrate my blog from Wordpress to [Github Pages](https://pages.github.com/). Even though the process was pretty simple, thanks to a number of open-source tools, there were a couple of hurdles along the way, so I decided to create this step-by-step guide.
 
 ## Setting Up the project
-GitHub Pages runs on top of the GitHub platform and is powered by [Jekyll](https://jekyllrb.com/), a templating engine that converts text written in [Markdown](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet) to static HTML. The first thing you need to do is create a new Jekyll project and store it in a GitHub repository.
+GitHub Pages runs on top of the GitHub platform and is powered by [Jekyll](https://jekyllrb.com/), a templating engine that translates [Markdown](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet) to static HTML.
 
-Create a GitHub repository named `<username>.github.io` where `<username>` is your GitHub username. In my case the repository is [gromande.github.io](https://github.com/gromande/gromande.github.io):
+Start by creating a GitHub repository named `<username>.github.io` where `<username>` is your GitHub username. In my case the repository is [gromande.github.io](https://github.com/gromande/gromande.github.io):
 
 ![image]({{ site.baseurl }}/assets/images/github-pages-repo.png)
 
@@ -23,14 +23,14 @@ Before creating the Jekyll site, you need to install [Ruby](https://www.ruby-lan
 - Bundler
 - Jekyll (at the time of this post the latest version supported by GitHub pages was 3.8.4. Check out the list of supported versions [here](https://pages.github.com/versions/))
 
-Once Ruby is install on you computer, run the following commands to installed the required gems:
+Once Ruby is install on you computer, run the following commands to install the gems:
 
 {% highlight shell %}
 gem install bundler
 gem install jekyll -v 3.8.5
 {% endhighlight %}
 
-You should now be able to use [Bundler](https://bundler.io/) to create your Jekyll site:
+You should now be able to create your Jekyll site with [Bundler](https://bundler.io/):
 
 {% highlight shell %}
 bundle init
@@ -38,14 +38,14 @@ bundle add jekyll -v 3.8.5 --skip-install
 bundle exec jekyll new --force --skip-bundle .
 {% endhighlight %}
 
-You can even run your site locally to verify that everything was setup correctly:
+Jekyll allows you to run your site locally, which comes in very handy if you need to check how your posts look before making them public:
 
 {% highlight shell %}
 bundle install
 bundle exec jekyll serve
 {% endhighlight %}
 
-Open your browser and go to [http://localhost:4000](http://localhost:4000) to check the default homepage:
+Open your browser and go to [http://localhost:4000](http://localhost:4000) to see the default homepage:
 
 ![image]({{ site.baseurl }}/assets/images/jekyll-default-site.png)
 
@@ -64,7 +64,7 @@ twitter_username: jekyllrb
 github_username:  jekyll
 {% endhighlight %}
 
-In my case, I added the following property show an excerpt of my posts below the title:
+I also added the following property show an excerpt of my posts on the home page:
 
 {% highlight yaml %}
 show_excerpts: true
@@ -76,14 +76,16 @@ And changed the default post URLs to only include the title:
 permalink: /:title/
 {% endhighlight %}
 
-Now is a good time to put your Markdown skills to test by adding your bio to the `about.md` page.
+Some of this configuration parameters are theme specific. Check out the [default theme](https://github.com/jekyll/minima) for a full list of available settings.
+
+Now is also a good time to put your Markdown skills to test and add your bio to the `about.md` page.
 
 ## Exporting Workdpress Posts
-Fortunately, some people have gone down this path before and have created some useful tools that makes the process much easier.
+Fortunately, some people have gone down this path before and have created some useful tools to make the migration much easier.
 
-I followed the process descrived in this [post](https://www.deadlyfingers.net/code/migrating-from-wordpress-to-github-pages). To make things a little easier for you, here are all the steps to export, convert, and load your posts.
+For the most part, the steps below are described in this [post](https://www.deadlyfingers.net/code/migrating-from-wordpress-to-github-pages) in more detail.
 
-Log into you Wordpress admin console and go to the following URL to export your post:
+Log into you Wordpress admin console and go to the following URL to export your Wordpress site:
 
 [https://your-domain/wp-admin/export.php](https://<your-domain>/wp-admin/export.php)
 
@@ -91,7 +93,7 @@ Select "All Content" and download the export file to your computer:
 
 ![image]({{ site.baseurl }}/assets/images/wordpress-export.png)
 
-The export file is in XML format and contains references to your images. We can use the `jekyll-import` Ruby gem to convert the exported files into HTML and download all images the `assets` directory.
+The export file is in XML format and contains references to images and other assets. We can use the `jekyll-import` Ruby gem to convert the exported files into HTML and download all images to the `assets` directory.
 
 Install the following Gems:
 
@@ -102,7 +104,7 @@ gem install open_uri_redirections
 gem install reverse_markdown
 {% endhighlight %}
 
-And run this command to convert the files:
+And run this command:
 
 {% highlight shell %}
 ruby -rubygems -e 'require "jekyll-import";
@@ -113,15 +115,15 @@ JekyllImport::Importers::WordpressDotCom.run({
 })'
 {% endhighlight %}
 
-Finally, use the following [Ruby script](https://gist.github.com/deadlyfingers/2023c61cbac83bb613393f262693cdf4) to convert the HTML files inside the `_posts` folder to Markdown:
+Lastly, use the following [Ruby script](https://gist.github.com/deadlyfingers/2023c61cbac83bb613393f262693cdf4) to convert the HTML content to Markdown:
 
 {% highlight shell %}
 ruby ./wordpress-html-to-md.rb "_posts"
 {% endhighlight shell %}
 
-All you have to do now is copy the entire `assets` folder to the root of your Jekyll folder and all the `.md` files generate by the scrip from the `_posts` folder into the `_posts` folder of your Jekyll's site.
+All you have to do now is copy the entire `assets` folder to the root of your Jekyll project and move all the `.md` files generate by the scrip from the `_posts` folder into the `_posts` folder of your Jekyll's site.
 
-Re-run you site locally and check you homepage again:
+Re-run you site locally and verify that all your posts are being listed on the home page:
 
 ![image]({{ site.baseurl }}/assets/images/jekyll-posts.png)
 
@@ -168,7 +170,7 @@ The following fields are not needed and can be removed from all your posts:
 - meta
 - author
 
-In addition, some posts might contain absolute URLs referencing other posts. Absolute URLs are discouraged since they make your site less portable. Run the following sed command to replace absolute URLs with relative URLs where `<your-domain>` is the domain for your site:
+In addition, some posts might contain absolute URLs referencing other posts. Absolute URLs are discouraged since they make your site less portable. Run the following `sed` command to replace absolute URLs with relative URLs. Replace `<your-domain>` with the domain for your site:
 
 {% highlight shell %}
 sed -i.bak 's/https:\/\/<your-domain>/{{ site.baseurl }}/g' *.md
