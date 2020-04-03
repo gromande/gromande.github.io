@@ -14,13 +14,16 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 title: Guillermo Roman
-email: 
+email:
 description: Rethinking the internet identity crisis
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: GuilleRoman
 github_username:  gromande
 linkedin_username: gromande
+
+# Google analytics
+google_analytics: UA-162160652-1
 
 # Build settings
 permalink: /:title/
